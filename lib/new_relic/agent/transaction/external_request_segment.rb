@@ -80,6 +80,7 @@ module NewRelic
             NewRelic::Agent.logger.debug "External segment response has invalid cross_app_id"
           end
         rescue => e
+          puts "e.backtrace: #{e.backtrace}"
           NewRelic::Agent.logger.error "Error in read_response_headers", e
         end
 
